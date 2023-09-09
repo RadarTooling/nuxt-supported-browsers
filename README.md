@@ -1,58 +1,58 @@
-<!--
-Get your module up and running quickly.
-
-Find and replace all on all files (CMD+SHIFT+F):
-- Name: My Module
-- Package name: my-module
-- Description: My new Nuxt module
--->
-
-# My Module
+# Nuxt Supported Browsers
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![License][license-src]][license-href]
 [![Nuxt][nuxt-src]][nuxt-href]
 
-My new Nuxt module for doing amazing things.
 
 - [✨ &nbsp;Release Notes](/CHANGELOG.md)
-<!-- - [🏀 Online playground](https://stackblitz.com/github/your-org/my-module?file=playground%2Fapp.vue) -->
+<!-- - [🏀 Online playground](https://stackblitz.com/github/CavalcanteLeo/nuxt-supported-browsers?file=playground%2Fapp.vue) -->
 <!-- - [📖 &nbsp;Documentation](https://example.com) -->
 
 ## Features
 
-<!-- Highlight some of the features your module provide here -->
-- ⛰ &nbsp;Foo
-- 🚠 &nbsp;Bar
-- 🌲 &nbsp;Baz
+Meet `Nuxt Supported Browsers`, your project's secret sauce for unleashing the awesomeness of modern CSS! Say goodbye to the headache of old, clunky browsers. With `Nuxt Supported Browsers`, we make sure your web magic shines on the latest browsers. If someone's stuck in the digital Stone Age, we'll politely nudge them to upgrade for a smoother, trendier experience. It's time to level up your project's style game with `Nuxt Supported Browsers`! 😎🚀
 
 ## Quick Setup
 
-1. Add `my-module` dependency to your project
+1. Add `nuxt-supported-browsers` dependency to your project
 
 ```bash
 # Using pnpm
-pnpm add -D my-module
+pnpm add -D nuxt-supported-browsers
 
 # Using yarn
-yarn add --dev my-module
+yarn add --dev nuxt-supported-browsers
 
 # Using npm
-npm install --save-dev my-module
+npm install --save-dev nuxt-supported-browsers
 ```
 
-2. Add `my-module` to the `modules` section of `nuxt.config.ts`
+2. Add `nuxt-supported-browsers` to the `modules` section of `nuxt.config.ts`
 
 ```js
 export default defineNuxtConfig({
   modules: [
-    'my-module'
+    'nuxt-supported-browsers'
   ]
+  ...
+  supportedBrowsers: {
+    page: "/unsupported-browser",
+    versions: {
+      Chrome: 86,
+      Firefox: 70,
+      Safari: 14.1,
+      Edge: 86,
+      Opera: 12,
+      "Internet Explorer": null,
+      "Unknown Browser": 12,
+    },
+  },
 })
 ```
 
-That's it! You can now use My Module in your Nuxt app ✨
+That's it! You can now use Nuxt Supported Browsers in your Nuxt app ✨
 
 ## Development
 
@@ -81,14 +81,14 @@ npm run release
 ```
 
 <!-- Badges -->
-[npm-version-src]: https://img.shields.io/npm/v/my-module/latest.svg?style=flat&colorA=18181B&colorB=28CF8D
-[npm-version-href]: https://npmjs.com/package/my-module
+[npm-version-src]: https://img.shields.io/npm/v/nuxt-supported-browsers/latest.svg?style=flat&colorA=18181B&colorB=28CF8D
+[npm-version-href]: https://npmjs.com/package/nuxt-supported-browsers
 
-[npm-downloads-src]: https://img.shields.io/npm/dm/my-module.svg?style=flat&colorA=18181B&colorB=28CF8D
-[npm-downloads-href]: https://npmjs.com/package/my-module
+[npm-downloads-src]: https://img.shields.io/npm/dm/nuxt-supported-browsers.svg?style=flat&colorA=18181B&colorB=28CF8D
+[npm-downloads-href]: https://npmjs.com/package/nuxt-supported-browsers
 
-[license-src]: https://img.shields.io/npm/l/my-module.svg?style=flat&colorA=18181B&colorB=28CF8D
-[license-href]: https://npmjs.com/package/my-module
+[license-src]: https://img.shields.io/npm/l/nuxt-supported-browsers.svg?style=flat&colorA=18181B&colorB=28CF8D
+[license-href]: https://npmjs.com/package/nuxt-supported-browsers
 
 [nuxt-src]: https://img.shields.io/badge/Nuxt-18181B?logo=nuxt.js
 [nuxt-href]: https://nuxt.com
