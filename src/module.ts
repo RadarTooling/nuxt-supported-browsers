@@ -16,6 +16,7 @@ export default defineNuxtModule<ModuleOptions>({
       throw new Error("Supported browser module options are required");
     }
     //FIX: type error
+    //@ts-expect-error
     nuxt.options.runtimeConfig.public.supportedBrowsers = options;
 
     addPlugin(resolver.resolve("./runtime/plugin"));
