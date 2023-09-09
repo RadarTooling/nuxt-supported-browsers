@@ -38,7 +38,7 @@ export default defineNuxtConfig({
   ]
   ...
   supportedBrowsers: {
-    page: "/unsupported-browser",
+    page: "/unsupported-browser", // <- This is the page where old browsers will be redirected.
     versions: {
       Chrome: 86,
       Firefox: 70,
@@ -52,7 +52,16 @@ export default defineNuxtConfig({
 })
 ```
 
+Create a page with the name you have set in the Nuxt config, e.g., `unsupported-browser.vue`, and add the desired message.
+
+
 That's it! You can now use Nuxt Supported Browsers in your Nuxt app ✨
+
+
+
+## Roadmap
+- [] Create a custom built-in UI page for unsupported browsers
+- [] Ensure that at least one version is set in the Nuxt config
 
 ## Development
 
