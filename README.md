@@ -10,7 +10,12 @@
 
 ## Features
 
-Meet `Nuxt Supported Browsers`, your project's secret sauce for unleashing the awesomeness of modern CSS! Say goodbye to the headache of old, clunky browsers. With `Nuxt Supported Browsers`, we make sure your web magic shines on the latest browsers. If someone's stuck in the digital Stone Age, we'll politely nudge them to upgrade for a smoother, trendier experience. It's time to level up your project's style game with `Nuxt Supported Browsers`! 😎🚀
+Meet `Nuxt Supported Browsers`, your project's secret sauce for unleashing the awesomeness of modern CSS! Say goodbye to the headache of old, clunky browsers. Make sure your web magic shines on the latest browsers. If someone's stuck in the digital Stone Age, we'll politely nudge them to upgrade for a smoother, trendier experience. It's time to level up your project's style game! 😎🚀
+
+- Force the project to run in a minimum version of the browser.
+- Redirect to a custom page if the version fails.
+- Use the browser user-agent to capture all info.
+- Create a custom browser name further than the pre-defined one.
 
 ## Quick Setup
 
