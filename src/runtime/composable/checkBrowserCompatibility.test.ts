@@ -3,7 +3,7 @@ import { useCheckBrowserCompatibility } from "./checkBrowserCompatibility";
 import { useDetectBrowser } from "./detectBrowser";
 
 const supportedBrowser = {
-  page: "/Supported-browser",
+  redirect: "/Supported-browser",
   versions: {
     Chrome: 86,
     Firefox: 70,

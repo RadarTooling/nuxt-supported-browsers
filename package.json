@@ -4,10 +4,19 @@
   "description": "Prevet to load Nuxt.js app in unsupported old browsers",
   "repository": "CavalcanteLeo/nuxt-supported-browser",
   "license": "MIT",
-  "type": "module",
   "author": {
-    "name": "Leo Cavalcante"
+    "name": "Leo Cavalcante <leonardo_cavalcante@msn.com>",
+    "url": "https://github.com/CavalcanteLeo"
   },
+  "keywords": [
+    "nuxt",
+    "module",
+    "nuxt-module",
+    "browser-compatibility",
+    "browser-support",
+    "old-browser"
+  ],
+  "type": "module",
   "exports": {
     ".": {
       "types": "./dist/types.d.ts",

@@ -1,37 +1,37 @@
 import { defineNuxtRouteMiddleware, navigateTo, useRuntimeConfig } from "#app";
 import { useDetectBrowser } from "../composable/detectBrowser";
-import { useCheckBrowserCompatibility } from "../composable/checkBrowserCompatibility";
-import { BrowsersVersion, SupportedBrowsers } from "../../types";
 
 export default defineNuxtRouteMiddleware((to) => {
   if (process.server) return;
 
-  const supportedBrowser: SupportedBrowsers =
-    useRuntimeConfig().public.supportedBrowser;
+  const { supportedBrowser } = useRuntimeConfig().public;
 
   if (!supportedBrowser) {
-    throw new Error("Supported browser module options are required");
+    console.warn(
+      "[Nuxt Supported browsers]: module options are required, module is disabled"
+    );
+    return;
   }
 
-  const supportedBrowsers: BrowsersVersion = supportedBrowser.versions;
-  const page: string = supportedBrowser.page;
+  const browsersVersion = supportedBrowser.versions;
+  const redirect = supportedBrowser.redirect;
 
-  const currentBrowser = useDetectBrowser(navigator.userAgent);
+  const isUnsuportedPage: boolean = to.path === redirect;
 
-  const isAtUnsuportedPage: boolean = to.path === page;
+  const { name, version } = useDetectBrowser(navigator.userAgent);
 
-  const isBrowserSupported: boolean = useCheckBrowserCompatibility({
-    supportedBrowsers,
-    currentBrowser,
-  });
+  const isSupportedBrowser: boolean =
+    name in browsersVersion &&
+    version >= browsersVersion[name] &&
+    Number.isFinite(browsersVersion[name]);
 
-  if (!isBrowserSupported && !isAtUnsuportedPage) {
-    return navigateTo(page, {
+  if (!isSupportedBrowser && !isUnsuportedPage) {
+    return navigateTo(redirect, {
       replace: true,
     });
   }
 
-  if (isBrowserSupported && isAtUnsuportedPage) {
+  if (isSupportedBrowser && isUnsuportedPage) {
     return navigateTo("/", {
       replace: true,
     });

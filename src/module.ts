@@ -1,12 +1,49 @@
 import { defineNuxtModule, addPlugin, createResolver } from "@nuxt/kit";
+import { defu } from "defu";
 
-// Module options TypeScript interface definition
-export interface ModuleOptions {}
+type AcceptedValues = number | null | undefined;
+
+type PredefinedBrowsers =
+  | "Chrome"
+  | "Safari"
+  | "Edge"
+  | "Firefox"
+  | "Opera"
+  | "Internet Explorer";
+
+export type BrowsersVersion = {
+  [key in PredefinedBrowsers]?: AcceptedValues;
+} & Record<string, AcceptedValues>;
+
+export interface ModuleOptions {
+  redirect: string;
+  versions: BrowsersVersion;
+}
+
+// declare module "nuxt/schema" {
+//   interface RuntimeConfig {
+//     supportedBrowsers?: ModuleOptions;
+//   }
+//   interface PublicRuntimeConfig {
+//     supportedBrowsers: ModuleOptions;
+//   }
+// }
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
-    name: "Supported-browsers",
+    name: "nuxt-supported-browsers",
     configKey: "supportedBrowsers",
+    defaults: {
+      redirect: "/unsupported-browser",
+      versions: {
+        Chrome: 84,
+        Firefox: 70,
+        Safari: 13,
+        Edge: 84,
+        Opera: null,
+        "Internet Explorer": undefined,
+      },
+    },
   },
 
   setup(options, nuxt) {
@@ -15,9 +52,11 @@ export default defineNuxtModule<ModuleOptions>({
     if (!options) {
       throw new Error("Supported browser module options are required");
     }
-    //FIX: type error
-    //@ts-expect-error
-    nuxt.options.runtimeConfig.public.supportedBrowsers = options;
+
+    nuxt.options.runtimeConfig.public.supportedBrowsers = defu(
+      nuxt.options.runtimeConfig.public.supportedBrowsers,
+      options
+    );
 
     addPlugin(resolver.resolve("./runtime/plugin"));
   },

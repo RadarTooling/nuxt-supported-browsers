@@ -1,8 +1,8 @@
 # Nuxt Supported Browsers
 
-[![npm version][npm-version-src]][npm-version-href]
+[![npm version][npm-version-src]][https://www.npmjs.com/package/nuxt-supported-browsers?activeTab=versions]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
-[![License][license-src]][license-href]
+[![License][license-src]][https://github.com/CavalcanteLeo/nuxt-supported-browsers/blob/main/LICENSE.md]
 [![Nuxt][nuxt-src]][nuxt-href]
 
 
@@ -38,7 +38,7 @@ export default defineNuxtConfig({
   ]
   ...
   supportedBrowsers: {
-    page: "/unsupported-browser", // <- This is the page where old browsers will be redirected.ga
+    redirect: "/unsupported-browser",
     versions: {
       Chrome: 86,
       Firefox: 70,

@@ -1,14 +1,14 @@
 export default defineNuxtConfig({
   modules: ["../src/module"],
   supportedBrowsers: {
-    page: "/unsupported-browser",
+    redirect: "/unsupported-browser",
     versions: {
       Chrome: 86,
       Firefox: 70,
       Safari: 14.1,
       Edge: 86,
-      Opera: 12,
-      "Internet Explorer": null,
+      Opera: null,
+      "Internet Explorer": undefined,
       "Unknown Browser": 12,
     },
   },
