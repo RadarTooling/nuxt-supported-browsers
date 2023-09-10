@@ -1,14 +1,12 @@
 # Nuxt Supported Browsers
 
-[![npm version][npm-version-src]][https://www.npmjs.com/package/nuxt-supported-browsers?activeTab=versions]
+[![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
-[![License][license-src]][https://github.com/CavalcanteLeo/nuxt-supported-browsers/blob/main/LICENSE.md]
+[![License][license-src]][license-href]
 [![Nuxt][nuxt-src]][nuxt-href]
 
 
 - [✨ &nbsp;Release Notes](/CHANGELOG.md)
-<!-- - [🏀 Online playground](https://stackblitz.com/github/CavalcanteLeo/nuxt-supported-browsers?file=playground%2Fapp.vue) -->
-<!-- - [📖 &nbsp;Documentation](https://example.com) -->
 
 ## Features
 
@@ -60,8 +58,8 @@ That's it! You can now use Nuxt Supported Browsers in your Nuxt app ✨
 
 
 ## Roadmap
-- [] Create a custom built-in UI page for unsupported browsers
-- [] Ensure that at least one version is set in the Nuxt config
+- [ ] Create a custom built-in UI page for unsupported browsers
+- [ ] Ensure that at least one version is set in the Nuxt config
 
 ## Development
 
