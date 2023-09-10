@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.4
+
+[compare changes](https://github.com/CavalcanteLeo/nuxt-supported-browser/compare/v0.0.3...v0.0.4)
+
+### 🩹 Fixes
+
+- Logic to validate the browser version ([f6f3fb1](https://github.com/CavalcanteLeo/nuxt-supported-browser/commit/f6f3fb1))
+
+### ❤️ Contributors
+
+- Leo Cavalcante <leonardo_cavalcante@msn.com>
+
 ## v0.0.3
 
 [compare changes](https://github.com/CavalcanteLeo/nuxt-supported-browser/compare/v0.0.2...v0.0.3)
