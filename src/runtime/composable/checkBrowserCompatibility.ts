@@ -1,8 +1,8 @@
-import { BrowsersVersion } from "../../types";
+import { MinimumBrowsersVersion } from "../../module";
 import { BrowserInfo } from "./detectBrowser";
 
 type CheckBrowserCompatibility = {
-  supportedBrowsers: BrowsersVersion;
+  supportedBrowsers: MinimumBrowsersVersion;
   currentBrowser: BrowserInfo;
 };
 
@@ -10,12 +10,15 @@ export function useCheckBrowserCompatibility({
   supportedBrowsers,
   currentBrowser,
 }: CheckBrowserCompatibility): boolean {
-  console.log(supportedBrowsers, currentBrowser);
+  if (currentBrowser.name in supportedBrowsers === false) {
+    return false;
+  }
 
-  // FIX: fix error (Object is possibly 'null' or 'undefined')
+  const mustSuportVersion = supportedBrowsers[currentBrowser.name];
+
   return (
-    currentBrowser.name in supportedBrowsers &&
-    currentBrowser.version >= supportedBrowsers[currentBrowser.name] &&
-    Number.isFinite(supportedBrowsers[currentBrowser.name])
+    typeof mustSuportVersion === "number" &&
+    Number.isFinite(mustSuportVersion) &&
+    currentBrowser.version >= mustSuportVersion
   );
 }

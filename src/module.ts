@@ -11,23 +11,14 @@ type PredefinedBrowsers =
   | "Opera"
   | "Internet Explorer";
 
-export type BrowsersVersion = {
+export type MinimumBrowsersVersion = {
   [key in PredefinedBrowsers]?: AcceptedValues;
 } & Record<string, AcceptedValues>;
 
 export interface ModuleOptions {
   redirect: string;
-  versions: BrowsersVersion;
+  versions: MinimumBrowsersVersion;
 }
-
-// declare module "nuxt/schema" {
-//   interface RuntimeConfig {
-//     supportedBrowsers?: ModuleOptions;
-//   }
-//   interface PublicRuntimeConfig {
-//     supportedBrowsers: ModuleOptions;
-//   }
-// }
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
@@ -40,7 +31,7 @@ export default defineNuxtModule<ModuleOptions>({
         Firefox: 70,
         Safari: 13,
         Edge: 84,
-        Opera: null,
+        Opera: 60,
         "Internet Explorer": undefined,
       },
     },
@@ -48,10 +39,6 @@ export default defineNuxtModule<ModuleOptions>({
 
   setup(options, nuxt) {
     const resolver = createResolver(import.meta.url);
-
-    if (!options) {
-      throw new Error("Supported browser module options are required");
-    }
 
     nuxt.options.runtimeConfig.public.supportedBrowsers = defu(
       nuxt.options.runtimeConfig.public.supportedBrowsers,
