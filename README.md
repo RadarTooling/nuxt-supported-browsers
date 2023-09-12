@@ -52,6 +52,7 @@ export default defineNuxtConfig({
       "Internet Explorer": null,
       "Unknown Browser": 12,
     },
+    globalAppMiddleware: true,
   },
 })
 ```

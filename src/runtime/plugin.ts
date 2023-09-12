@@ -1,7 +1,9 @@
-import { defineNuxtPlugin, addRouteMiddleware } from "#app";
+import { defineNuxtPlugin, addRouteMiddleware, useRuntimeConfig } from "#app";
 import supportedBrowsers from "./middleware/supported-browsers";
 
 export default defineNuxtPlugin(() => {
-  const global = { global: true };
-  addRouteMiddleware("supportedBrowsers", supportedBrowsers, global);
+  const { globalAppMiddleware } = useRuntimeConfig().public.supportedBrowsers
+  addRouteMiddleware("supportedBrowsers", supportedBrowsers, {
+    global: globalAppMiddleware
+  });
 });

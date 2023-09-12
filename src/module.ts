@@ -16,8 +16,9 @@ export type MinimumBrowsersVersion = {
 } & Record<string, AcceptedValues>;
 
 export interface ModuleOptions {
-  redirect: string;
-  versions: MinimumBrowsersVersion;
+  redirect?: string;
+  versions?: MinimumBrowsersVersion;
+  globalAppMiddleware?: boolean
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -36,9 +37,18 @@ export default defineNuxtModule<ModuleOptions>({
       },
     },
   },
-
+  defaults: {
+    globalAppMiddleware: true
+  },
   setup(options, nuxt) {
     const resolver = createResolver(import.meta.url);
+
+    if (!options.versions || !options.redirect) {
+      console.warn(
+        "[Nuxt Supported browsers]: module options are required, module is disabled"
+      );
+      return;
+    }
 
     nuxt.options.runtimeConfig.public.supportedBrowsers = defu(
       nuxt.options.runtimeConfig.public.supportedBrowsers,
