@@ -9,13 +9,6 @@ export default defineNuxtRouteMiddleware((to) => {
     supportedBrowsers: { versions, redirect },
   } = useRuntimeConfig().public;
 
-  if (!versions || !redirect) {
-    console.warn(
-      "[Nuxt Supported browsers]: module options are required, module is disabled"
-    );
-    return;
-  }
-
   const isUnsuportedPage: boolean = to.path === redirect;
 
   const { name, version } = useDetectBrowser(navigator.userAgent);
