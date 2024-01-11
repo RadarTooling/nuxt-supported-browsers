@@ -1,6 +1,6 @@
 {
   "name": "nuxt-supported-browsers",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Prevet to load Nuxt.js app in unsupported old browsers",
   "repository": "CavalcanteLeo/nuxt-supported-browser",
   "license": "MIT",
